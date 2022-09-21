@@ -1,0 +1,10 @@
+Questao5:
+Imprimir:
+contador/valor/valor/endereco/endereco
+i=0 vet[0] = 1.1 *(f + 0) = 1.1 &vet[0] = (endereço em heaxadecimal da posição 0 de vet) (f + 0) = (endereço em hexadecimal da posição 0 de vet) 
+i=1 vet[1] = 2.2 *(f + 1) = 2.2 &vet[1] = (endereço em hexadecimal da posição 1 de vet ) (f + 1) = (endereço em hexadecimal da posição 1 de vet) 
+i=2 vet[2] = 3.3 *(f + 2) = 3.3 &vet[2] = (endereço em hexadecimal da posição 2 de vet) (f + 2) = (endereço em hexadecimal da posição 2 de vet) 
+i=3 vet[3] = 4.4 *(f + 3) = 4.4 &vet[3] = (endereço em hexadecimal da posição 3 de vet) (f + 3) = (endereço em hexadecimal da posição 3 de vet) 
+i=4 vet[4] = 5.5 *(f + 4) = 5.5 &vet[4] = (endereço em hexadecimal da posição 4 de vet) (f + 4) = (endereço em hexadecimal da posição 4 de vet) 
+
+todos os endereços com são distantes 6 posições de endereço a mais que a anterior.

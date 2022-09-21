@@ -1,0 +1,5 @@
+Questao 9:
+1.É esperado que os valores de endereço para o vetor do tipo char para x+1 fiquem um endereço de memória atrás do outro, sendo: x+1 = 4093 x+2 = 4094 x+3 = 4095. 
+2.Para o tipo int eles os endereços teram uma diferença de 2 bytes, ou seja: x+1 = 4094, x+2 = 4098, x+3 = 4100.
+3.Para o tipo float: x+1 = 4096, x+2 = 40100, x+3 = 4100, saltando de 4 em 4 endereços ou bytes de memória.
+4.Para o tipo double: x+1 = 4100, x+2 = 4108, x+3 = 4116, saltando de 8 em 8 bytes.

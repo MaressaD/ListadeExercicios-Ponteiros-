@@ -1,0 +1,3 @@
+Questao 8:
+	O primeiro programa imprime:4 9 13
+	O segundo programa imprime os valores dos endereços em hexadecimal das 3 posições do vetor vet.

@@ -1,0 +1,5 @@
+Questao7:
+p = mat + 1; R: Operação válida.
+p = mat++; R: Não é válida, pois essa operação aritimética não é válida para a utilizar em um array.
+p = ++mat; R: Não é válida, pela mesma razão da questai anterior pois aqui também é realizado uma operação aritmética de ponteiro em array.
+x = (*mat)++; R: Operação válida.

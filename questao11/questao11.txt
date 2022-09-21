@@ -1,0 +1,8 @@
+aloha[2] = value; R:válido
+scanf("%f", &aloha); R:inválido
+aloha = value"; R:inválido
+printf("%f", aloha); R:inválido
+coisas[4][4] = aloha[3]; R: válido
+coisas[5] = aloha; R: inválido
+pf = value; R: inválido
+pf = aloha; R: válido

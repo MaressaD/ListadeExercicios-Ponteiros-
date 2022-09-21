@@ -1,0 +1,9 @@
+Questao3:
+p = i; R: É uma atribuição ilegal, pois p é um ponteiro e nção pode recber o valor de i que é um inteiro.
+q = &j; 
+p = &*&i; 
+i = (*&)j; R:É atribuição ilegal pois ao depurar (*&) tratamos essa atribuição como uma ind
+i = *&j;
+i = *&*&j; 
+q = *p; R: É atribuição ilegal pois novamente q é um ponteiro e não pode receber a atribuiçao *p, que diz respeito ao valor contido em p, um inteiro.
+i = (*p)++ + *q; 

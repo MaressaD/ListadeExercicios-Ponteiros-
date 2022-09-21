@@ -1,0 +1,14 @@
+Questao4:
+a)Imprime:20
+b)Imprime:29.0;
+c)Imprime:P
+d)Imprime:e
+e)Imprime:P
+f)Imprime:e
+g)Imprime:t
+h)Imprime:31
+i)Imprime:45
+j)Imprime:27
+l)Imprime:31
+m)Imprime:45
+n)Imprime:27

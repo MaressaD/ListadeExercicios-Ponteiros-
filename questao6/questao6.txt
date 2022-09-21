@@ -1,0 +1,3 @@
+Questao6:
+Resposta
+*(pulo + 2);
