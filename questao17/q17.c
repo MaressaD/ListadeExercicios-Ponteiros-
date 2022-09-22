@@ -20,16 +20,20 @@ int main(void) {
         printf("\nDigite o valor da posicao %d do vetorA: ", i);
         scanf("%d", &vetorA[i]);
     }
+    printf("\n");
     for( i = 0; i < n; i++) {
-        printf("\n\nDigite o valor da posicao %d do vetorB: ", i);
+        printf("\nDigite o valor da posicao %d do vetorB: ", i);
         scanf("%d", &vetorB[i]);
     }
 
-    void soma_vetor(vetorA,vetorB,vetorR,n);
+    soma_vetor(vetorA,vetorB,vetorR,n);
 
-    for(int j=0;j<n;j++){
-        printf("\n%d ", vetorR[j]);
+    printf("\nVetor resultante de Vetor A - Vetor B:\n [");
+
+    for(int j=0;j<n-1;j++){
+        printf("%d, ", vetorR[j]);
     }
+    printf("%d]\n",vetorR[n-1]);
 
     free(vetorA);
     free(vetorB);

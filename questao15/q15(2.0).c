@@ -1,7 +1,9 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <stdbool.h>
-    void order(float *num,int n);
+
+    void order(float *num,int size,int (*compara)(float num1,float num2));
+    int comp_grow(float num1,float num2);
 
     int main(void) {
       unsigned int n,menor;
@@ -27,24 +29,23 @@
       return 0;
     }
 
-    void order(float *num,int n,(compara*)(float *num1,float *num2)){
+    void order(float *num,int size,int (*compara)(float num1,float num2)){
       int i;
       float aux;
       bool troca;
       do{
         troca = false;
-      for (i = 0; i < n-1; i++) {
-        if (int unsigned compara(num[i],num[i+1])) { //terminar essa condições, verificar se a regra está correta
+      for (i = 0; i < size-1; i++) {
+        if (compara(num[i],num[i+1])) {
           aux=num[i];
           num[i]=num[i+1];
           num[i+1]=aux;
           troca = true;
         }
-      ;
       }
       }while(troca);
     }
 
-    int comp_grow(float *num1,float *num2){
-        return (*num1)-(*num2);
+    int comp_grow(float num1,float num2){
+        return (num1)-(num2);
     }
