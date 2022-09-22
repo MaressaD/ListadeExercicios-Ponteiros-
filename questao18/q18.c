@@ -1,18 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void soma_vetor(int *vetor1,int *vetor2,int *vetor3,int size);
-void produto_matriz(int *matrizA,int *matrizB,int *matrizC,int nlinha,int ncolunaA, int ncolunaB);
+void produto_matriz(int **matrizA,int **matrizB,int **matrizC,int nlinhaA,int ncolunaA, int nlinhaB, int ncolunaB);
 
 int main(void) {
-  unsigned int nlA,nlB,ncA,ncB,i;
-  int *matA,*matB,*matC;
+  unsigned int nlA,nlB,ncA,ncB,i,j;
+  int **matA,**matB,**matC;
 
- // ncA==nlB;
+
     do{
-        printf("Qual tamanho dos vetores que deseja somar \n");
-        scanf("%d", &n);
-    }while(n<=0);
+        printf("Insira o numero de linhas da matriz A \n");
+        scanf("%d", &nlA);
+    }while(nlA<=0);
+    do{
+        printf("Insira o numero de colunas da matriz A e da matriz B\n");
+        scanf("%d", &ncA);
+    }while(ncA<=0);
+    nlB=ncA;
+    do{
+        printf("Insira o numero de colunas da matriz A \n");
+        scanf("%d", &ncB);
+    }while(ncB<=0);
 
     matA= malloc(nlA*sizeof(int*));
     matB= malloc(nlB*sizeof(int*));
@@ -20,37 +28,50 @@ int main(void) {
 
     for (i = 0; i < nlA; i++) {
         matA[i] = malloc(ncA*sizeof(int));
-
         matC[i] = malloc(ncB*sizeof(int));
     }
      for (i = 0; i < nlB; i++) {
         matB[i] = malloc(ncB*sizeof(int));
     }
 
- /*   for( i = 0; i < n; i++) {
-        printf("\nDigite o valor da posicao %d do vetorA: ", i);
-        scanf("%d", &vetorA[i]);
+     printf("\nDigite o valor para as posições da Matriz A: ");
+
+    for(i=0;i<nlA;i++){
+        for(j=0;j<ncA;j++){
+        printf("\nPosicao [%d][%d]: ",i,j);
+        scanf("%d",&matA[i][j]);
+        }
     }
-    printf("\n");
-    for( i = 0; i < n; i++) {
-        printf("\nDigite o valor da posicao %d do vetorB: ", i);
-        scanf("%d", &vetorB[i]);
-    }*/
 
-    produto_matriz(matA,matB,matC,nl,ncA,ncB);
+    printf("\nDigite o valor para as posições da Matriz B: ");
 
-    printf("\nVetor resultante de Vetor A - Vetor B:\n [");
-
-    /*for(int j=0;j<n-1;j++){
-        printf("%d, ", vetorR[j]);
+    for(i=0;i<nlB;i++){
+        for(j=0;j<ncB;j++){
+        printf("\nPosicao [%d][%d] : ",i,j);
+        scanf("%d",&matB[i][j]);
+        }
     }
-    printf("%d]\n",vetorR[n-1]);*/
+
+
+    produto_matriz(matA,matB,matC,nlA,ncA,nlB,ncB);
+
+    printf("\nMatriz resultante C:\n");
+
+    for(i=0;i<nlA;i++){
+        printf(" |");
+        for(j=0;j<ncB;j++){
+               printf(" %d ",matC[i][j]);
+        }
+        printf("|");
+        printf("\n");
+    }
+
 
      for (i = 0; i < nlA; i++){
         free(matA[i]);
         free(matC[i]);
     }
-    for (i = 0; i < nlC; i++){
+    for (i = 0; i < nlB; i++){
         free(matB[i]);
     }
 
@@ -61,11 +82,17 @@ int main(void) {
     return 0;
 }
 
-void produto_matriz(int *matrizA,int *matrizB,int *matrizC,int nlinha,int ncolunaA, int ncolunaB){
+void produto_matriz(int **matrizA,int **matrizB,int **matrizC,int nlinhaA,int ncolunaA, int nlinhaB, int ncolunaB){
     int i,j,k;
-    for(i=0;i<nlinha;i++){
+
+    for(i=0;i<nlinhaA;i++){
         for(j=0;j<ncolunaB;j++){
-            for(k=0,j<ncolunaA;k++){
+                matrizC[i][j]= 0;
+        }
+    }
+    for(i=0;i<nlinhaA;i++){
+        for(j=0;j<ncolunaB;j++){
+            for(k=0;k<ncolunaA;k++){
                 matrizC[i][j] = matrizC[i][j] + (matrizA[i][k]*matrizB[k][j]);
             }
         }
