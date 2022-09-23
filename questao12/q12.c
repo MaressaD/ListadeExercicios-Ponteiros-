@@ -18,7 +18,7 @@ int main(void){
     ctotal=pont_func(custos,nc); //o ponteiro para função pont_fun agora pode ser chamado sempre que se desejar usar a função soma_vetor
 
     printf("O total de custos foi: %d",ctotal);
-
+    free(custos);
     return 0;
 }
 
