@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void order(float *num,int size,float (*compara)(float num1,float num2));
-float comp_grow(float num1,float num2);
+void order2(float *num,int size,int (*func_comp)(int num1,int num2));
+int comp_grow2(int num1,int num2);
 
 int main(void) {
-    unsigned int n,menor;
+    int n;
     float *valores;
 
     do{
         printf("Quantos valores deseja ordenar: \n");
         scanf("%d", &n);
-    }while(n==0);
+    }while(n<=0);
 
     valores = malloc(n*sizeof(float));
 
@@ -20,23 +20,23 @@ int main(void) {
         printf("\nDigite o valor da posicao %d:", i);
         scanf("%f", &valores[i]);
     }
-    order(valores,n,comp_grow);
+    order2(valores,n,comp_grow2);
 
     for(int j=0;j<n;j++){
-        printf("\n%f", valores[j]);
+        printf("\n%.2f", valores[j]);
     }
     free(valores);
     return 0;
 }
 
-void order(float *num,int size,float (*compara)(float num1,float num2)){
+void order2(float *num,int size,int (*func_comp)(int num1,int num2)){
     int i;
     float aux,aux2;
     bool troca;
         do{
             troca = false;
             for (i = 0; i < size-1; i++) {
-                aux = compara(num[i],num[i+1]);
+                aux = func_comp((int)num[i],(int)num[i+1]);
                 if (aux>0){
                     aux2=num[i];
                     num[i]=num[i+1];
@@ -47,6 +47,7 @@ void order(float *num,int size,float (*compara)(float num1,float num2)){
       }while(troca);
 }
 
-float comp_grow(float num1,float num2){
+int comp_grow2(int num1,int num2){
     return (num1)-(num2);
 }
+
