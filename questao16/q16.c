@@ -65,8 +65,8 @@ int main(void){
 
     printf("\nO tempo gasto pelo primeiro programa:  %f s\n",tempo1);
     //printf("\nTempo: %f s\n",tempo1);
-    printf("Tempo: %f s\n",tempo2);
-    printf("Tempo: %f s\n",tempo3);
+    printf("O tempo gasto pelo segundo programa (qsort): %f s\n",tempo2);
+    printf("O tempo gasto pelo terceiro programa: %f s\n",tempo3);
 
     free(valores1);
     free(valores2);
